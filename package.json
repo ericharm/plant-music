@@ -1,12 +1,10 @@
 {
-  "name": "biomock",
+  "name": "plant-music",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --watch & node node_modules/watchify/index.js public/js/index.js -o public/js/bundle.js & nodemon server.js",
-    "dev": "webpack --watch & webpack-dev-server --progress --colors --port 8888 --hot",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack --watch & node node_modules/watchify/index.js public/js/index.js -o public/js/bundle.js & nodemon server.js"
   },
   "author": "",
   "license": "ISC",

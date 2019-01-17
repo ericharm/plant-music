@@ -3,23 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <title></title>
-  <script src="js/bundle.js"></script>
-  <!-- <script src="/socket.io/socket.io.js"></script> -->
-  <!-- <script> -->
-    <!-- var socket = window.io() -->
-
-    <!-- socket.on('update', (data) => { -->
-      <!-- console.log(data) -->
-    <!-- }) -->
-  <!-- </script> -->
   <link rel="stylesheet" href="css/style.css" />
+  <script src="js/bundle.js"></script>
 </head>
 <body>
   <div id="app">
     <div id="control-panel">
-      <div id="temperature" class="monitor"></div>
-      <div id="moisture-level" class="monitor"></div>
-      <div id="light-level" class="monitor"></div>
+      <div id="temp" class="monitor">
+        <label>Temperature</label>
+        <div class="value-wrapper">
+          <span class="monitor-value"></span>
+          &deg;C
+        </div>
+      </div>
+      <div id="moisture" class="monitor">
+        <label>Moisture</label>
+        <div class="value-wrapper">
+          <span class="monitor-value"></span>
+          %
+        </div>
+      </div>
+      <div id="light" class="monitor">
+        <label>Light</label>
+        <div class="value-wrapper">
+          <span class="monitor-value"></span>
+          Lumens
+        </div>
+      </div>
     </div>
   </div>
 </body>

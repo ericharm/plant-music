@@ -19,6 +19,7 @@ Here will be included some photos and diagrams along with explanation.
 Here will be a brief explanation of the code that Arduino uses to transfer the sensor data into the serial port.
 
 **WEB SERVER**
+
 `npm install`
 `npm start`
 
