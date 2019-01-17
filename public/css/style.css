@@ -1,0 +1,45 @@
+* { 
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
+}
+
+body, #app {
+  width: 100%;
+  height: 100%;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem;
+}
+
+#control-panel {
+  display: grid;
+  grid-template-areas: 'left center right';
+  grid-gap: 2rem;
+}
+
+.monitor {
+  outline: 1px solid #cdcdcd;
+  height: 20rem;
+}
+
+#temperature {
+  grid-area: 'left';
+}
+
+#moisture-level {
+  grid-area: 'center';
+}
+
+#light-level {
+  grid-area: 'right';
+}

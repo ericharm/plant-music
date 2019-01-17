@@ -1,0 +1,23 @@
+{
+  "name": "biomock",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --watch & node node_modules/watchify/index.js public/js/index.js -o public/js/bundle.js & nodemon server.js",
+    "dev": "webpack --watch & webpack-dev-server --progress --colors --port 8888 --hot",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.26.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  },
+  "dependencies": {
+    "nodesynth": "^0.6.0",
+    "socket.io": "^2.2.0",
+    "watchify": "^3.11.0"
+  }
+}
