@@ -1,4 +1,6 @@
 const express = require('express')
+const SerialPort = require('serialport')
+const serialPortName = '/dev/cu.usbmodem1421'
 const app = express()
 let server = require('http').createServer(app)
 const io = require('socket.io')(server)
@@ -33,6 +35,17 @@ function streamTestData () {
   }, 3000)
 }
 
+function streamPortData () {
+  const serialPort = new SerialPort(serialPortName, 9600)
+  var Readline = SerialPort.parsers.Readline
+  var parser = new Readline()
+  serialPort.pipe(parser)
+  parser.on('data', function (data) {
+    stats = data
+    io.emit('update', JSON.parse(stats))
+  })
+}
+
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/index.html'))
 })
@@ -47,6 +60,6 @@ server.listen(port, () => {
   if (environment === 'test') {
     streamTestData()
   } else {
-    // we'll be updating stats from the serial port
+    streamPortData()
   }
 })
