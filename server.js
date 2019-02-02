@@ -1,48 +1,45 @@
 const express = require('express')
 const SerialPort = require('serialport')
-const serialPortName = '/dev/cu.usbmodem1421'
 const app = express()
-let server = require('http').createServer(app)
+const server = require('http').createServer(app)
 const io = require('socket.io')(server)
 const path = require('path')
 const host = 'localhost'
-const port = 8081
-const environment = process.argv[2]
+const serverPort = 8081
+const passedArgument = process.argv[2]
+const environment = passedArgument === 'test' ? 'test' : 'live'
 
 app.use(express.static(path.join(__dirname, '/node_modules')))
 app.use(express.static(path.join(__dirname, '/public')))
 
-let stats = {
-  temp: 0, light: 0, moisture: 0
-}
+let stats = { temp: 0, light: 0, moisture: 0 }
 
-function updateStat (stat) {
-  var change = Math.floor(Math.random() * 2)
-  var sign = Math.floor(Math.random() * 2) ? (-1) : 1
+function randomlyUpdateStat (stat) {
+  const change = Math.floor(Math.random() * 2)
+  const sign = Math.floor(Math.random() * 2) ? (-1) : 1
   stat += change * sign
   return stat
 }
 
 function streamTestData () {
-  stats = {
-    temp: 20, light: 34, moisture: 83
-  }
+  stats = { temp: 20, light: 34, moisture: 83 }
   setInterval(function () {
-    for (var stat in stats) {
-      stats[stat] = updateStat(stats[stat])
+    for (let stat in stats) {
+      stats[stat] = randomlyUpdateStat(stats[stat])
     }
     io.emit('update', stats)
   }, 3000)
 }
 
 function streamPortData () {
-  const serialPort = new SerialPort(serialPortName, 9600)
-  var Readline = SerialPort.parsers.Readline
-  var parser = new Readline()
+  const portName = passedArgument || '/dev/cu.usbmodem1421'
+  const serialPort = new SerialPort(portName, 9600)
+  const Readline = SerialPort.parsers.Readline
+  const parser = new Readline()
   serialPort.pipe(parser)
   parser.on('data', function (data) {
-    stats = data
-    io.emit('update', JSON.parse(stats))
+    stats = JSON.parse(data)
+    io.emit('update', stats)
   })
 }
 
@@ -55,8 +52,8 @@ app.get('/plant-data', (req, res) => {
   res.send(JSON.stringify(stats))
 })
 
-server.listen(port, () => {
-  console.log('Listening at', host, port)
+server.listen(serverPort, () => {
+  console.log('Listening at', host, serverPort)
   if (environment === 'test') {
     streamTestData()
   } else {
