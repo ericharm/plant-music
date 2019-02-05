@@ -4,6 +4,26 @@ Climate-driven procedural audio
 
 ![](http://www.ericharm.com/image/setup.jpg)
 
+
+## Installation
+
+`git clone https://github.com/ericharm/plant-music.git`
+
+`cd plant-music`
+
+`wget <samples folder>`
+
+`wget <samples pD patches>`
+
+Build the circuit and connect to serial port
+
+Open plant_music.ino in the Arduino IDE, upload it to your board and run it.  Close the Arduino IDE.
+
+Start the Node server.
+
+Open plant-music.pd in Pure Data and click the bang labeled 'start'
+
+
 ## Summary
 
 Using an [Arduino](https://www.arduino.cc/), environmental data is fed from an external circuit into your computer's serial port.  A [Node.js](https://nodejs.org/en/about/) server reads the data from the serial port and broadcasts it, also providing a simple visualization of the sensor readings.  The sensor readings are then used by a [Pure Data](https://puredata.info/) (Pd) environment to manipulate the inputs in an audio patch.
@@ -45,6 +65,7 @@ I recommend downloading the [latest release](https://puredata.info/downloads/pur
 The main patch to load up is plant-music.pd.  Make sure the node server is running first.
 
 I use a few externals in my patches and you'll need to add them to your Pd environment (Help > Find Externals brings up the menu to find them.  You will also probably want to tell Pd to add newly installed libraries to its search path). Make sure you have installed [else](https://github.com/porres/pd-else) and [purest-json](https://github.com/residuum/PuRestJson).
+
 
 ## Additional Resources
 
