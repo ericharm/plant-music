@@ -33,6 +33,7 @@ The Arduino code can be found in plant_music.ino.  You may need to copy this fil
 **WEB SERVER**
 
 `npm install`
+
 `npm start <path/to/serialport>`
 
 For live data, make sure the Arduino sketch is running first.  The server can be used to output test data with `npm start test` - this will allow you to feed data into a Pd patch without the need for an active working circuit sending you live data.  If you do not pass an arguming to `npm start`, it will try to read from `/dev/cu.usbmodem1421` by default.  Visit http://localhost:8081 in a browser for a visualization.
