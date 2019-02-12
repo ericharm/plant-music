@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --watch & node node_modules/watchify/index.js public/js/index.js -o public/js/bundle.js & nodemon server.js"
+    "start": "node node_modules/webpack/bin/webpack.js --watch & node node_modules/watchify/index.js public/js/index.js -o public/js/bundle.js & node node_modules/nodemon/bin/nodemon.js server.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "nodemon": "^1.18.10",
     "webpack": "^4.26.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"

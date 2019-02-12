@@ -40,7 +40,7 @@ Additional pictures and video available [here](http://ericharm.com/plant-music.h
 
 **BUILDING THE CIRCUIT**
 
-![](https://ericharm.com/image/circuit.jpg?)
+![](https://ericharm.com/image/circuit.jpg)
 
 In place of nails I am using drill bits because the hardware store wouldn't let me open boxes of nails to test for conductivity.
 
