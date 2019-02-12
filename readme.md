@@ -11,9 +11,9 @@ Climate-driven procedural audio
 
 `cd plant-music`
 
-`wget <samples folder>`
+`wget https://ericharm.com/pd-patches.zip`
 
-`wget <samples pD patches>`
+`unzip pd-patches.zip`
 
 Build the circuit and connect to serial port
 
@@ -21,7 +21,7 @@ Open plant_music.ino in the Arduino IDE, upload it to your board and run it.  Cl
 
 Start the Node server.
 
-Open plant-music.pd in Pure Data and click the bang labeled 'start'
+Open plant-music.pd in Pure Data and click the message labeled 'start'
 
 
 ## Summary
