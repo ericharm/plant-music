@@ -2,7 +2,7 @@
 
 Climate-driven procedural audio
 
-![](http://www.ericharm.com/image/setup.jpg)
+![](https://ericharm.com/image/setup.jpg)
 
 
 ## Installation
@@ -28,21 +28,19 @@ Open plant-music.pd in Pure Data and click the bang labeled 'start'
 
 Using an [Arduino](https://www.arduino.cc/), environmental data is fed from an external circuit into your computer's serial port.  A [Node.js](https://nodejs.org/en/about/) server reads the data from the serial port and broadcasts it, also providing a simple visualization of the sensor readings.  The sensor readings are then used by a [Pure Data](https://puredata.info/) (Pd) environment to manipulate the inputs in an audio patch.
 
-**Temperature** effects tempo.  In a cold environment, the audio plays back more slowly.
+  * Temperature effects tempo.  In a cold environment, the audio plays back more slowly.
 
-**Light** changes the value of a low-pass filter.  As the environment gets dimmer, less and less high frequencies are allowed through.
+  * Light changes the value of a low-pass filter.  As the environment gets dimmer, less and less high frequencies are allowed through.
 
-**Moisture** sets the volume of the bass notes.  Put the moisture sensor in a dry plant and you will hear mostly percussion.  In a well-watered plant you'll hear a healthy amount of synth bass.
+  * Moisture sets the volume of the bass notes.  Put the moisture sensor in a dry plant and you will hear mostly percussion.  In a well-watered plant you'll hear a healthy amount of synth bass.
 
-Read more about Plant Music [here](http://ericharm.com/plant-music.html)
+Additional pictures and video available [here](http://ericharm.com/plant-music.html)
 
 ---
 
 **BUILDING THE CIRCUIT**
 
-![](http://www.ericharm.com/image/circuit.jpg)
-
-In place of the photoresistor I am in fact using this [phototransistor](https://www.arduino.cc/documents/datasheets/HW5P-1.pdf)
+![](https://ericharm.com/image/circuit.jpg)
 
 In place of nails I am using drill bits because the hardware store wouldn't let me open boxes of nails to test for conductivity.
 
