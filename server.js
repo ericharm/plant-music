@@ -22,7 +22,7 @@ function randomlyUpdateStat (stat) {
 }
 
 function streamTestData () {
-  stats = { temp: 20, light: 100, moisture: 80 }
+  stats = { temp: 20, light: 80, moisture: 70 }
   setInterval(function () {
     for (let stat in stats) {
       stats[stat] = randomlyUpdateStat(stats[stat])

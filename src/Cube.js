@@ -31,7 +31,7 @@ function setup3d () {
   container.appendChild(renderer.domElement)
 
   return {
-    renderer, camera, scene, pointLight
+    renderer, camera, scene, pointLight, pointLight2
   }
 }
 

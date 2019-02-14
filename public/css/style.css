@@ -44,6 +44,10 @@ body, #app {
   border-left: 1em solid;
 }
 
+.monitor.inverted {
+  color: #fafafa;
+}
+
 .monitor label {
   font-weight: bold;
 }
