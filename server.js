@@ -22,13 +22,13 @@ function randomlyUpdateStat (stat) {
 }
 
 function streamTestData () {
-  stats = { temp: 20, light: 34, moisture: 83 }
+  stats = { temp: 20, light: 100, moisture: 80 }
   setInterval(function () {
     for (let stat in stats) {
       stats[stat] = randomlyUpdateStat(stats[stat])
     }
     io.emit('update', stats)
-  }, 3000)
+  }, 1000)
 }
 
 function streamPortData () {
