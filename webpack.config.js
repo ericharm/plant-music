@@ -1,6 +1,5 @@
 module.exports = {
   mode: 'development',
-
   watch: true,
   entry: {
     bundle: __dirname + '/index.js'
